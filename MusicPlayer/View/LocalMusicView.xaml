@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="MusicPlayer.View.LocalMusicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicPlayer.View"
+             xmlns:vm="clr-namespace:MusicPlayer.ViewModel"
+             xmlns:model="clr-namespace:MusicPlayer.Model"
+             xmlns:Custom="clr-namespace:WpfCustomControlLibrary.Controls;assembly=WpfCustomControlLibrary"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             DataContext="{Binding Source={StaticResource Locator}, Path=LocalMusic}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <!--<TextBlock>本地音乐</TextBlock>
+        <Button Command="{Binding AddMusicCommand}" Width="50" Height="50" Margin="129,20,121,230"></Button>
+        <Button Command="{Binding PlayAndPauseCommand}" Width="50" Height="50" Margin="144,144,106,106"></Button>
+        <Button Command="{Binding PlayCommand}" Width="50" Height="50" Margin="139,78,111,172"></Button>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--画线-->
+        <Separator VerticalAlignment="Bottom"></Separator>
+
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="本地音乐" FontSize="16" VerticalAlignment="Center" Margin="20, 0, 0, 0"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" >
+            <Custom:MusicButton MusicIcon="&#xe604;" Style="{StaticResource PlayAllStyle}">播放全部</Custom:MusicButton>
+            <Custom:MusicButton MusicIcon="&#xe64d;" Command="{Binding addItemCommand}"></Custom:MusicButton>
+        </StackPanel>
+        
+        <!--播放列表-->
+        <DataGrid SelectedItem="{Binding Music, Mode=TwoWay}"  Name="MusicList" Grid.Row="2" ItemsSource="{Binding playList}" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="序号" Binding="{Binding Path=Number}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        </Style>
+
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="操作"></DataGridTextColumn>
+                <DataGridTextColumn Width="4*" Header="音乐标题" Binding="{Binding Path=MusicName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="2*" Header="歌手" Binding="{Binding Path=Singer}"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="2*" Header="操作" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Custom:MusicButton MusicIcon="&#xe61d;" IconSize="12" Height="25" Command="{Binding Source={StaticResource Locator}, Path=LocalMusic.DeleteMusicCommand}"></Custom:MusicButton>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="3*" Header="专辑" Binding="{Binding Path=Album}"></DataGridTextColumn>
+                <DataGridTextColumn Width="2*" Header="时长" Binding="{Binding Path=Duration}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectedChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectedChangedCommand}" CommandParameter="{Binding SelectedItem, ElementName=MusicList}"/>
+                </i:EventTrigger>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding PlayCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </DataGrid>
+    </Grid>
+</UserControl>

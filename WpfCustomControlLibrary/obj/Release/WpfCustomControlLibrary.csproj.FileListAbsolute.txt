@@ -1,0 +1,16 @@
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\bin\Release\WpfCustomControlLibrary.dll
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\bin\Release\WpfCustomControlLibrary.pdb
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary_MarkupCompile.cache
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary_MarkupCompile.lref
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\Controls\TabButton.baml
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\Style\Colors.baml
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\Style\Icon.baml
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\Themes\Generic.baml
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.g.resources
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.Properties.Resources.resources
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.dll
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.pdb
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\WpfCustomControlLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\毕设\WpfCustomControlLibrary\WpfCustomControlLibrary\obj\Release\Controls\MusicButton.baml

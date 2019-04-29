@@ -1,0 +1,37 @@
+﻿<Application x:Class="MusicPlayer.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:MusicPlayer" StartupUri="MainWindow.xaml" 
+             xmlns:vm="clr-namespace:MusicPlayer.ViewModel"
+             xmlns:view="clr-namespace:MusicPlayer.View"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Controls/MusicButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Style/ScrollViewer.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Style/DataGrid.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Style/TabControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/MusicPlayer;component/Style/TextBoxStyle.xaml"/>
+                <ResourceDictionary Source="Pack://application:,,,/MusicPlayer;component/Style/SliderStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Style/ExpanderStyle.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/WpfCustomControlLibrary;component/Style/Menu.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource DefaultScrollViewer}"></Style>
+            <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource DefaultDataGrid}"/>
+            <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource DefaultTabControl}"/>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:MusicPlayer.ViewModel" />
+
+            <DataTemplate DataType="{x:Type vm:LocalMusicViewModel}">
+                <view:LocalMusicView></view:LocalMusicView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:FindMusicViewModel}">
+                <view:FindMusicView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SearchMusicViewModel}">
+                <view:SerachMusicView></view:SerachMusicView>
+            </DataTemplate>
+
+        </ResourceDictionary>
+  </Application.Resources>
+</Application>
